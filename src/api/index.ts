@@ -1,12 +1,7 @@
 import axios from "axios";
-import { config } from "dotenv"
-
-config()
-
-const validateURL = process.env.VALIDATE_API_URL || "http://localhost:8080/";
 
 export const validateCourse = async (text: string) => {
-
+  const validateURL = import.meta.env.VITE_VALIDATE_API_URL || "http://localhost:8080/";
 
   try {
     const response = await axios.post(validateURL, {
